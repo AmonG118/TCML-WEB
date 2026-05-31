@@ -230,6 +230,38 @@
 }
 
 /* ─────────────────────────────────────────
+   Hero explicit layout utilities
+   ───────────────────────────────────────── */
+.hero-grid {
+  grid-template-columns: 1fr 420px;
+}
+
+.hero-cta-wrap {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-cta-wrap > a {
+  width: auto;
+}
+
+@media (max-width: 767px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-cta-wrap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta-wrap > a {
+    width: 100%;
+  }
+}
+
+/* ─────────────────────────────────────────
    Mobile Responsive (< 768px)
    元件已用 Tailwind 響應式類別處理 grid/border/padding，
    此區塊僅補充無法由 className 覆蓋的邊緣情況

@@ -50,7 +50,7 @@ export default function Hero() {
       </div>
 
       {/* ── Hero main：1fr + 420px desktop, single col mobile ── */}
-      <div className="grid grid-cols-1 md:[grid-template-columns:1fr_420px] min-h-[540px]">
+      <div className="hero-grid grid min-h-[540px]">
         {/* ── Left copy ── */}
         <div
           className="relative flex flex-col justify-between overflow-hidden p-5 md:[padding:56px_48px] [border-bottom:1px_solid_var(--rule)] md:[border-bottom:none] md:[border-right:1px_solid_var(--rule)]"
@@ -118,7 +118,8 @@ export default function Hero() {
               Learn{" "}
               <mark
                 style={{
-                  background: "var(--highlight)",
+                  display: "inline",
+                  background: "#F7E98E",
                   color: "var(--ink)",
                   padding: "2px 8px",
                   borderRadius: "3px",
@@ -156,11 +157,11 @@ export default function Hero() {
             </p>
 
             {/* CTA buttons */}
-            <div className="flex flex-col gap-3 md:flex-row md:items-center md:flex-wrap">
+            <div className="hero-cta-wrap flex gap-3">
               {/* Primary: Find a Center */}
               <Link
                 href="/centers"
-                className="inline-flex items-center justify-center gap-2 font-semibold text-white transition-all duration-200 hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orange)] focus-visible:ring-offset-2 w-full md:w-auto"
+                className="inline-flex items-center justify-center gap-2 font-semibold text-white transition-all duration-200 hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orange)] focus-visible:ring-offset-2"
                 style={{
                   backgroundColor: "var(--orange)",
                   fontFamily: "var(--font-ui)",
@@ -178,7 +179,7 @@ export default function Hero() {
               {/* Teal: Enroll Now */}
               <Link
                 href="/enroll"
-                className="inline-flex items-center justify-center gap-2 font-semibold text-white transition-all duration-200 hover:-translate-y-px hover:bg-[var(--teal-dark)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal)] focus-visible:ring-offset-2 w-full md:w-auto"
+                className="inline-flex items-center justify-center gap-2 font-semibold text-white transition-all duration-200 hover:-translate-y-px hover:bg-[var(--teal-dark)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal)] focus-visible:ring-offset-2"
                 style={{
                   backgroundColor: "var(--teal)",
                   fontFamily: "var(--font-ui)",
@@ -196,7 +197,7 @@ export default function Hero() {
               {/* Outline: Learn More */}
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center gap-2 transition-all duration-200 hover:border-[var(--teal)] hover:text-[var(--teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal)] focus-visible:ring-offset-2 w-full md:w-auto"
+                className="inline-flex items-center justify-center gap-2 transition-all duration-200 hover:border-[var(--teal)] hover:text-[var(--teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal)] focus-visible:ring-offset-2"
                 style={{
                   backgroundColor: "transparent",
                   color: "var(--ink)",
