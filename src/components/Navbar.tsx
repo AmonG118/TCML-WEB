@@ -186,7 +186,7 @@ export default function Navbar() {
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger
               className={cn(
-                "lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-lg",
+                "lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg",
                 "text-[var(--ink-mid)] hover:bg-[var(--paper-dark)] transition-colors",
                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orange)] focus-visible:ring-offset-2"
               )}

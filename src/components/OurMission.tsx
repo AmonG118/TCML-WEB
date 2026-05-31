@@ -40,7 +40,7 @@ export default function OurMission() {
               fontFamily: "var(--font-ui)",
             }}
           >
-            我們的目標
+            <span lang="zh-TW">我們的目標</span>
           </p>
           <h2
             id="mission-heading"

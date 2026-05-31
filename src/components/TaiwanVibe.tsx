@@ -36,7 +36,7 @@ export default function TaiwanVibe() {
               fontFamily: "var(--font-ui)",
             }}
           >
-            文化體驗
+            <span lang="zh-TW">文化體驗</span>
           </p>
           <h2
             id="vibe-heading"
@@ -105,7 +105,7 @@ export default function TaiwanVibe() {
                   fontFamily: "var(--font-display)",
                 }}
               >
-                {item.kanji}
+                <span lang="zh-TW">{item.kanji}</span>
               </div>
               <p
                 style={{

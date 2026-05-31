@@ -71,8 +71,8 @@ export default function Footer() {
                   href={href}
                   className="hover:border-[var(--orange)] hover:text-[var(--orange)] transition-all duration-150"
                   style={{
-                    width: "30px",
-                    height: "30px",
+                    width: "44px",
+                    height: "44px",
                     border: "1px solid var(--rule)",
                     borderRadius: "var(--radius-chip)",
                     display: "flex",

@@ -52,7 +52,7 @@ export default function LatestNews() {
                 fontFamily: "var(--font-ui)",
               }}
             >
-              最新消息
+              <span lang="zh-TW">最新消息</span>
             </p>
             <h2
               id="news-heading"
