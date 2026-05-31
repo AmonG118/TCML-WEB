@@ -121,37 +121,38 @@ export default function Hero() {
                 fontFamily: "var(--font-display)",
                 fontSize: "clamp(3rem, 5.5vw, 5rem)",
                 fontWeight: 700,
-                lineHeight: 1.0,
-                letterSpacing: "-2px",
+                lineHeight: 1.15,
+                letterSpacing: "-0.03em",
                 color: "var(--ink)",
               }}
             >
-              Learn{" "}
-              <mark
-                style={{
-                  display: "inline",
-                  background: "none",
-                  color: "var(--ink)",
-                  textDecorationLine: "underline",
-                  textDecorationStyle: "solid",
-                  textDecorationColor: "var(--orange)",
-                  textDecorationThickness: "3px",
-                  textUnderlineOffset: "8px",
-                }}
-              >
-                Mandarin
-              </mark>
-              ,
-              <br />
-              <em
-                style={{
-                  fontStyle: "italic",
-                  fontWeight: 300,
-                  color: "var(--ink-mid)",
-                }}
-              >
-                Explore Taiwan.
-              </em>
+              <span style={{ display: "block" }}>
+                Learn{" "}
+                <mark
+                  style={{
+                    background: "none",
+                    textDecorationLine: "underline",
+                    textDecorationStyle: "solid",
+                    textDecorationColor: "var(--orange)",
+                    textDecorationThickness: "3px",
+                    textUnderlineOffset: "6px",
+                  }}
+                >
+                  Mandarin
+                </mark>
+                ,
+              </span>
+              <span style={{ display: "block", marginTop: "0.2em" }}>
+                <em
+                  style={{
+                    fontStyle: "italic",
+                    fontWeight: 300,
+                    color: "var(--ink-mid)",
+                  }}
+                >
+                  Explore Taiwan.
+                </em>
+              </span>
             </h1>
 
             {/* Description */}
