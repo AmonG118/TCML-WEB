@@ -14,9 +14,9 @@ export default function Hero() {
       style={{ borderColor: "var(--rule)" }}
       aria-labelledby="hero-heading"
     >
-      {/* ── Eyebrow bar ── */}
+      {/* ── Eyebrow bar — hidden on mobile (WCAG 2.2.2 compliant: static, no scroll) ── */}
       <div
-        className="hero-eyebrow flex items-center border-b overflow-x-auto"
+        className="hero-eyebrow hidden md:flex items-center border-b"
         style={{
           height: "40px",
           borderColor: "var(--rule)",
@@ -25,13 +25,12 @@ export default function Hero() {
           fontWeight: 600,
           letterSpacing: "1px",
           textTransform: "uppercase",
-          whiteSpace: "nowrap",
           gap: 0,
         }}
         aria-label="Program overview"
       >
         <span
-          className="pr-5 mr-5 border-r shrink-0"
+          className="pr-5 mr-5 border-r"
           style={{ borderColor: "var(--rule)", color: "var(--ink-light)" }}
         >
           Official Program · OCAC Taiwan{" "}
@@ -51,19 +50,13 @@ export default function Hero() {
           </svg>
         </span>
         <span
-          className="pr-5 mr-5 border-r shrink-0"
+          className="pr-5 mr-5 border-r"
           style={{ borderColor: "var(--rule)", color: "var(--teal)" }}
         >
           ● Enrolling Now — Summer 2026
         </span>
-        <span
-          className="pr-5 mr-5 border-r shrink-0"
-          style={{ borderColor: "var(--rule)", color: "var(--ink-light)" }}
-        >
+        <span style={{ color: "var(--ink-light)" }}>
           60+ Centers Worldwide
-        </span>
-        <span className="shrink-0" style={{ color: "var(--ink-light)" }}>
-          Est. 2021
         </span>
       </div>
 
@@ -137,10 +130,10 @@ export default function Hero() {
               <mark
                 style={{
                   display: "inline",
-                  background: "#F7E98E",
+                  background: "var(--highlight)",
                   color: "var(--ink)",
                   padding: "2px 8px",
-                  borderRadius: "3px",
+                  borderRadius: "var(--radius-badge)",
                 }}
               >
                 Mandarin

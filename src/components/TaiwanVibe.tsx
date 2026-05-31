@@ -16,10 +16,8 @@ export default function TaiwanVibe() {
     >
 
       <div
-        className="grid grid-cols-1 md:grid-cols-2 px-5 py-10 md:[padding:64px_48px] gap-8 md:gap-16"
+        className="section-inner-vibe grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16"
         style={{
-          maxWidth: "1280px",
-          margin: "0 auto",
           alignItems: "center",
           position: "relative",
           zIndex: 1,
@@ -89,11 +87,11 @@ export default function TaiwanVibe() {
           {VIBE_ITEMS.map((item) => (
             <div
               key={item.kanji}
-              className="transition-colors duration-150 cursor-pointer hover:bg-white/12"
+              className="transition-all duration-150 cursor-pointer vibe-card"
               style={{
                 backgroundColor: "rgba(255,255,255,0.08)",
                 border: "1px solid rgba(255,255,255,0.15)",
-                borderRadius: "10px",
+                borderRadius: "var(--radius-card)",
                 padding: "20px",
               }}
             >

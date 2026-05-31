@@ -23,13 +23,7 @@ export default function OurMission() {
       style={{ backgroundColor: "var(--charcoal-dark)" }}
       aria-labelledby="mission-heading"
     >
-      <div
-        className="px-5 py-10 md:[padding:72px_48px]"
-        style={{
-          maxWidth: "1280px",
-          margin: "0 auto",
-        }}
-      >
+      <div className="section-inner">
         {/* Section header */}
         <div
           className="mb-12 pb-5 border-b"
@@ -68,13 +62,15 @@ export default function OurMission() {
           {MISSION_ITEMS.map((item, idx) => (
             <div
               key={idx}
-              className={`transition-colors duration-200 hover:bg-white/5 px-5 py-8 md:[padding:40px_32px] [border-bottom:1px_solid_rgba(255,255,255,0.08)] last:[border-bottom:none] md:[border-bottom:none]${idx < MISSION_ITEMS.length - 1 ? " md:[border-right:1px_solid_rgba(255,255,255,0.08)]" : ""}`}
+              className="mission-card transition-colors duration-200 hover:bg-white/5"
             >
               {/* Color bar */}
               <div
-                className="h-0.5 rounded-full mb-4"
                 style={{
-                  width: "28px",
+                  width: "var(--bar-width)",
+                  height: "2px",
+                  borderRadius: "var(--radius-bar)",
+                  marginBottom: "16px",
                   backgroundColor:
                     item.barColor === "orange"
                       ? "var(--orange)"

@@ -119,7 +119,7 @@ export default function Navbar() {
         </nav>
 
         {/* ── Right Controls ── */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 ml-auto">
           {/* Language pills（grouped border container）*/}
           <div
             className="hidden md:flex items-center overflow-hidden"

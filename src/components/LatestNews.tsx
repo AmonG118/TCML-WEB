@@ -34,13 +34,7 @@ export default function LatestNews() {
       style={{ backgroundColor: "var(--white)", borderColor: "var(--rule)" }}
       aria-labelledby="news-heading"
     >
-      <div
-        className="px-5 py-10 md:[padding:72px_48px]"
-        style={{
-          maxWidth: "1280px",
-          margin: "0 auto",
-        }}
-      >
+      <div className="section-inner">
         {/* Section header */}
         <div
           className="flex items-end justify-between mb-12 pb-5 border-b"
@@ -96,14 +90,13 @@ export default function LatestNews() {
           {NEWS_ITEMS.map((item, idx) => (
             <div
               key={idx}
-              className={`cursor-pointer transition-all duration-200 relative overflow-hidden flex flex-col group [border-bottom:1px_solid_var(--rule)] last:[border-bottom:none] md:[border-bottom:none]${idx < NEWS_ITEMS.length - 1 ? " md:[border-right:1px_solid_var(--rule)]" : ""}`}
+              className="news-card cursor-pointer transition-all duration-200 relative overflow-hidden flex flex-col group"
             >
               {/* Image area */}
               <div
                 className="relative overflow-hidden flex items-center justify-center"
                 style={{
                   height: "200px",
-                  backgroundColor: "#paper-dark",
                   background:
                     idx === 0
                       ? "linear-gradient(145deg, #C8BFB0, #A89880)"
@@ -136,9 +129,9 @@ export default function LatestNews() {
                     letterSpacing: "0.5px",
                     color: "var(--ink-mid)",
                     backgroundColor: "rgba(255,255,255,0.9)",
-                    border: "1px solid transparent",
+                    border: "1px solid var(--rule)",
                     padding: "3px 8px",
-                    borderRadius: "3px",
+                    borderRadius: "var(--radius-badge)",
                   }}
                 >
                   {item.date}
@@ -147,8 +140,9 @@ export default function LatestNews() {
 
               {/* Card body */}
               <div
-                className="flex-1 flex flex-col p-7"
+                className="flex-1 flex flex-col"
                 style={{
+                  padding: "24px 28px 28px",
                   backgroundColor: "var(--white)",
                 }}
               >
@@ -169,9 +163,11 @@ export default function LatestNews() {
 
                 {/* Color bar */}
                 <div
-                  className="h-0.5 rounded-full mb-3"
                   style={{
-                    width: "24px",
+                    width: "var(--bar-width)",
+                    height: "2px",
+                    borderRadius: "var(--radius-bar)",
+                    marginBottom: "12px",
                     backgroundColor:
                       item.barColor === "orange" ? "var(--orange)" : "var(--teal)",
                   }}

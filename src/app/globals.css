@@ -89,6 +89,16 @@
   --input:      rgba(26, 24, 20, 0.1);
   --ring:       #F5921E;
   --radius:     0.5rem;
+
+  /* ── TCML Border Radius Scale（命名規格，統一引用）── */
+  --radius-bar:   2px;   /* 色條、分隔線指示器 */
+  --radius-badge: 3px;   /* 日期 badge、mark highlight */
+  --radius-chip:  4px;   /* chip、tag、社群圖示、小型 UI */
+  --radius-btn:   6px;   /* 按鈕、input、一般互動元件 */
+  --radius-card: 10px;   /* 功能卡片（TaiwanVibe 等） */
+
+  /* ── Color Bar Width（全站統一）── */
+  --bar-width: 28px;
 }
 
 /* ─────────────────────────────────────────
@@ -276,10 +286,6 @@
     grid-template-columns: 1fr;
   }
 
-  .hero-eyebrow {
-    padding: 0 20px;
-  }
-
   /* Mobile: tighter padding for copy column */
   .hero-copy-pad {
     padding: 24px 20px;
@@ -310,30 +316,156 @@
 }
 
 /* ─────────────────────────────────────────
-   Footer layout utilities
+   Section inner containers（Option A：full-width + fixed padding）
+   取代 maxWidth:1280px + margin:0 auto，確保所有 section 左緣對齊
    ───────────────────────────────────────── */
-.footer-top-grid {
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+.section-inner {
+  padding: 72px 48px;
 }
 
+.section-inner-vibe {
+  padding: 64px 48px;
+}
+
+/* OurMission card border/padding（取代 Tailwind v4 arbitrary class）*/
+.mission-card {
+  padding: 40px 32px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mission-card:last-child {
+  border-right: none;
+}
+
+/* TaiwanVibe card hover（取代 hover:bg-white/12 arbitrary class）*/
+.vibe-card:hover {
+  background-color: rgba(255, 255, 255, 0.13) !important;
+}
+
+/* LatestNews card border（取代 Tailwind v4 arbitrary class）*/
+.news-card {
+  border-right: 1px solid var(--rule);
+}
+
+.news-card:last-child {
+  border-right: none;
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  font-size: 11px;
+  color: var(--ink-light);
+  font-family: var(--font-ui);
+}
+
+@media (max-width: 767px) {
+  .section-inner,
+  .section-inner-vibe {
+    padding: 32px 20px;
+  }
+
+  .mission-card {
+    padding: 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .news-card {
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .news-card:last-child {
+    border-bottom: none;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .mission-card:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ─────────────────────────────────────────
+   Footer layout — 3 outer cols aligning with OurMission dividers
+   ───────────────────────────────────────── */
+.footer-top-grid {
+  padding: 0 48px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Outer 3 cols */
 .footer-col {
   border-right: 1px solid var(--rule);
-  padding: 48px 40px;
 }
 
 .footer-col:last-child {
   border-right: none;
 }
 
+/* Brand col padding */
+.footer-col-brand {
+  padding: 48px 40px 48px 0;
+}
+
+/* Inner 2-col grid within cols 2 & 3 */
+.footer-col-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+
+.footer-sub-col {
+  padding: 48px 28px;
+}
+
+.footer-sub-col:first-child {
+  border-right: 1px solid var(--rule);
+}
+
 @media (max-width: 767px) {
   .footer-top-grid {
-    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    grid-template-columns: 1fr;
   }
 
-  .footer-col { border-right: none; border-bottom: none; padding: 32px 20px; }
-  .footer-col-brand  { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-  .footer-col-pages  { border-bottom: 1px solid var(--rule); }
-  .footer-col-resources { border-right: 1px solid var(--rule); }
+  .footer-col {
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .footer-col:last-child {
+    border-bottom: none;
+  }
+
+  .footer-col-brand {
+    padding: 32px 20px;
+  }
+
+  .footer-col-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-sub-col {
+    padding: 28px 16px 28px 20px;
+  }
+
+  .footer-sub-col:first-child {
+    padding-right: 16px;
+  }
+
+  .footer-sub-col:last-child {
+    padding-left: 16px;
+  }
 }
 
 /* ─────────────────────────────────────────
