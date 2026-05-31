@@ -62,8 +62,9 @@ export default function Navbar() {
             <span style={{ color: "var(--charcoal)" }}>CML</span>
           </span>
 
-          {/* Subtitle with left border separator */}
+          {/* Subtitle with left border separator — hidden on mobile */}
           <span
+            className="hidden md:inline-block"
             style={{
               fontFamily: "var(--font-ui)",
               fontSize: "10px",

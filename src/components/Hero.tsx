@@ -53,7 +53,7 @@ export default function Hero() {
       <div className="hero-grid grid min-h-[540px]">
         {/* ── Left copy ── */}
         <div
-          className="relative flex flex-col justify-between overflow-hidden p-5 md:[padding:56px_48px] [border-bottom:1px_solid_var(--rule)] md:[border-bottom:none] md:[border-right:1px_solid_var(--rule)]"
+          className="hero-copy-pad relative flex flex-col justify-between overflow-hidden [border-bottom:1px_solid_var(--rule)] md:[border-bottom:none] md:[border-right:1px_solid_var(--rule)]"
         >
           {/* 裝飾性「學」字（純氛圍，aria-hidden）*/}
           <span

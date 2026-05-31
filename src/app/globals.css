@@ -236,6 +236,11 @@
   grid-template-columns: 1fr 460px;
 }
 
+/* Desktop padding for left copy column */
+.hero-copy-pad {
+  padding: 56px 48px;
+}
+
 .hero-cta-wrap {
   flex-direction: row;
   align-items: center;
@@ -249,6 +254,11 @@
 @media (max-width: 767px) {
   .hero-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Mobile: tighter padding for copy column */
+  .hero-copy-pad {
+    padding: 24px 20px;
   }
 
   .hero-cta-wrap {
