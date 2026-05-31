@@ -1,26 +1,336 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
+@custom-variant dark (&:is(.dark *));
+
+/* ─────────────────────────────────────────
+   TCML Brand Variables（來源：DESIGN.md）
+   ───────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ── Brand Colors ── */
+  --orange:        #F5921E;
+  --orange-dark:   #D97B0A;
+  --orange-light:  #FEF3E6;
+
+  --teal:          #0D9488;
+  --teal-dark:     #0A7A70;
+  --teal-light:    #E6F7F5;
+
+  --charcoal:      #3D4655;
+  --charcoal-dark: #2A3140;
+
+  /* ── Palette ── */
+  --paper:         #F5F2EC;
+  --paper-dark:    #EDE9E1;
+  --highlight:     #F7E98E;
+  --ink:           #1A1814;
+  --ink-mid:       #4A4640;
+  --ink-light:     #9A948E;
+  --rule:          rgba(26, 24, 20, 0.08);  /* notebook lines + 元件分隔線 */
+  --white:         #FFFFFF;
+
+  /* ── Semantic ── */
+  --color-success: #2E7D32;
+  --color-warning: #F57C00;
+  --color-error:   #C62828;
+
+  /* ── Typography ── */
+  --font-display: 'Fraunces', serif;
+  --font-ui:      'DM Sans', sans-serif;
+  --font-cjk:     'Noto Sans TC', 'Microsoft JhengHei', system-ui, sans-serif;
+
+  --text-hero: clamp(3rem, 5.5vw, 5rem);
+  --text-h1:   clamp(2rem, 4vw, 3rem);
+  --text-h2:   clamp(1.8rem, 3vw, 2.4rem);
+  --text-h3:   1.5rem;
+  --text-body: 1rem;
+  --text-sm:   0.875rem;
+  --text-xs:   0.75rem;
+
+  --leading-tight:  1.0;
+  --leading-normal: 1.6;
+  --leading-loose:  1.75;
+
+  /* ── Spacing (8px base) ── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* ── Breakpoints ── */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* ── shadcn semantic overrides（mapping to TCML brand）── */
+  --background: #F5F2EC;
+  --foreground: #1A1814;
+  --card:       #FFFFFF;
+  --card-foreground: #1A1814;
+  --popover:    #FFFFFF;
+  --popover-foreground: #1A1814;
+  --primary:    #F5921E;
+  --primary-foreground: #FFFFFF;
+  --secondary:  #0D9488;
+  --secondary-foreground: #FFFFFF;
+  --muted:      #EDE9E1;
+  --muted-foreground: #9A948E;
+  --accent:     #FEF3E6;
+  --accent-foreground: #1A1814;
+  --destructive: #C62828;
+  --border:     rgba(26, 24, 20, 0.08);
+  --input:      rgba(26, 24, 20, 0.1);
+  --ring:       #F5921E;
+  --radius:     0.5rem;
 }
 
+/* ─────────────────────────────────────────
+   Tailwind v4 @theme inline — TCML utilities
+   使用方式：bg-orange / text-teal / bg-paper …
+   ───────────────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* shadcn 語意對應 */
+  --color-background:        var(--background);
+  --color-foreground:        var(--foreground);
+  --color-card:              var(--card);
+  --color-card-foreground:   var(--card-foreground);
+  --color-popover:           var(--popover);
+  --color-popover-foreground:var(--popover-foreground);
+  --color-primary:           var(--primary);
+  --color-primary-foreground:var(--primary-foreground);
+  --color-secondary:         var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:             var(--muted);
+  --color-muted-foreground:  var(--muted-foreground);
+  --color-accent:            var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive:       var(--destructive);
+  --color-border:            var(--border);
+  --color-input:             var(--input);
+  --color-ring:              var(--ring);
+
+  /* TCML brand utilities */
+  --color-orange:        var(--orange);
+  --color-orange-dark:   var(--orange-dark);
+  --color-orange-light:  var(--orange-light);
+  --color-teal:          var(--teal);
+  --color-teal-dark:     var(--teal-dark);
+  --color-teal-light:    var(--teal-light);
+  --color-charcoal:      var(--charcoal);
+  --color-charcoal-dark: var(--charcoal-dark);
+  --color-paper:         var(--paper);
+  --color-paper-dark:    var(--paper-dark);
+  --color-highlight:     var(--highlight);
+  --color-ink:           var(--ink);
+  --color-ink-mid:       var(--ink-mid);
+  --color-ink-light:     var(--ink-light);
+
+  /* Fonts */
+  --font-sans:    var(--font-ui);
+  --font-display: var(--font-display);
+  --font-cjk:     var(--font-cjk);
+  --font-mono:    var(--font-geist-mono);
+
+  /* Radii */
+  --radius-sm:  calc(var(--radius) * 0.6);
+  --radius-md:  calc(var(--radius) * 0.8);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─────────────────────────────────────────
+   Base Styles
+   ───────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-family: var(--font-ui), var(--font-cjk), sans-serif;
+    background-color: var(--paper);
+    color: var(--ink);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--paper);
+    position: relative;
+  }
+
+  /*
+   * Notebook 橫線格線覆層（仿雜誌質感稿紙）
+   * fixed 定位 → 不隨頁面捲動，視覺上「印在紙上」
+   * z-index: 0 → 在正常內容之下（內容需有 position + z-index ≥ 1）
+   * opacity: 0.35 × --rule(0.08) ≈ 0.028 有效透明度，極度細緻
+   * pointer-events: none → 不攔截任何互動
+   */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 79px,
+      var(--rule) 79px,
+      var(--rule) 80px
+    );
+    pointer-events: none;
+    opacity: 0.35;
+  }
+
+  /* 確保主內容在 notebook 覆層之上 */
+  body > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), serif;
+    line-height: var(--leading-tight);
+  }
+
+  /* Accessible focus ring */
+  :focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
+  }
+
+  /* Skip to main content（無障礙 3.1.1）*/
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: var(--space-4);
+    padding: var(--space-2) var(--space-4);
+    background: var(--orange);
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-weight: 600;
+    border-radius: 0 0 var(--radius) var(--radius);
+    z-index: 9999;
+    transition: top 0.2s;
+  }
+
+  .skip-link:focus {
+    top: 0;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─────────────────────────────────────────
+   Mobile Responsive (< 768px)
+   ───────────────────────────────────────── */
+@media (max-width: 767px) {
+  /* Hero: Single column layout */
+  [style*="gridTemplateColumns: \"1fr 460px\""] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* News & Mission: Single column grid */
+  [style*="gridTemplateColumns: \"repeat(3, 1fr)\""] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Taiwan Vibe: 2x2 to vertical stack */
+  [style*="gridTemplateColumns: \"1fr 1fr\""],
+  [style*="grid-template-columns: \"1fr 1fr\""] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer: Single column */
+  [style*="gridTemplateColumns: \"2fr 1fr 1fr 1fr\""] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Remove borders between grid items */
+  [style*="borderRight: \"1px solid"] {
+    border-right: none !important;
+  }
+
+  /* Adjust padding for mobile */
+  section > div[style*="padding: \"56px 48px\""],
+  section > div[style*="padding: \"72px 48px\""],
+  section > div[style*="padding: \"64px 48px\""] {
+    padding: 32px 20px !important;
+  }
+
+  /* Full-width buttons */
+  a[style*="padding: \"12px 22px\""],
+  a[style*="padding: \"12px 18px\""] {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* Stack button container vertically */
+  div[style*="gap: \"12px\""] > a {
+    width: 100% !important;
+  }
+
+  div[style*="gap: \"12px\""] {
+    flex-direction: column !important;
+  }
+
+  /* Section inner padding */
+  section[style*="backgroundColor"] > div[style*="maxWidth"],
+  section > div > div[style*="maxWidth"] {
+    padding: 32px 20px !important;
+  }
+
+  /* Hero section mobile styles */
+  section[aria-labelledby="hero-heading"] {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  section[aria-labelledby="hero-heading"] > div > div:nth-child(2) {
+    background-color: var(--paper-dark);
+    min-height: 200px;
+  }
+
+  /* News card mobile */
+  section[aria-labelledby="news-heading"] > div > div > div {
+    border-right: none !important;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  section[aria-labelledby="news-heading"] > div > div > div:last-child {
+    border-bottom: none;
+  }
+
+  /* Taiwan Vibe mobile */
+  section[aria-labelledby="vibe-heading"] > div {
+    gap: 32px !important;
+  }
+
+  /* Our Mission mobile */
+  section[aria-labelledby="mission-heading"] > div > div > div {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  section[aria-labelledby="mission-heading"] > div > div > div:last-child {
+    border-bottom: none;
+  }
+
+  /* Footer mobile */
+  footer > div > div {
+    border-right: none !important;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  footer > div > div:last-child {
+    border-bottom: none;
+  }
 }
