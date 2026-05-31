@@ -251,6 +251,11 @@
   grid-template-columns: 1fr 460px;
 }
 
+/* Eyebrow bar padding — replaces inline style so mobile can override */
+.hero-eyebrow {
+  padding: 0 48px;
+}
+
 /* Desktop padding for left copy column */
 .hero-copy-pad {
   padding: 56px 48px;
@@ -269,6 +274,10 @@
 @media (max-width: 767px) {
   .hero-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-eyebrow {
+    padding: 0 20px;
   }
 
   /* Mobile: tighter padding for copy column */
@@ -309,6 +318,7 @@
 
 .footer-col {
   border-right: 1px solid var(--rule);
+  padding: 48px 40px;
 }
 
 .footer-col:last-child {
@@ -320,7 +330,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .footer-col { border-right: none; border-bottom: none; }
+  .footer-col { border-right: none; border-bottom: none; padding: 32px 20px; }
   .footer-col-brand  { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
   .footer-col-pages  { border-bottom: 1px solid var(--rule); }
   .footer-col-resources { border-right: 1px solid var(--rule); }
@@ -338,9 +348,4 @@
     overflow-x: hidden;
   }
 
-  /* Hero eyebrow bar：限縮左右 padding，保留橫向捲動 */
-  section[aria-labelledby="hero-heading"] > div:first-child {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
 }

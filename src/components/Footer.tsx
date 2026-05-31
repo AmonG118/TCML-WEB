@@ -18,7 +18,6 @@ export default function Footer() {
         {/* Column 1: Brand + Tagline + Social */}
         <div
           className="footer-col footer-col-brand"
-          style={{ padding: "48px 40px" }}
         >
           <div
             style={{
@@ -107,7 +106,6 @@ export default function Footer() {
         {/* Column 2: Pages */}
         <div
           className="footer-col footer-col-pages"
-          style={{ padding: "48px 40px" }}
         >
           <h4
             style={{
@@ -215,7 +213,6 @@ export default function Footer() {
         {/* Column 3: Resources */}
         <div
           className="footer-col footer-col-resources"
-          style={{ padding: "48px 40px" }}
         >
           <h4
             style={{
@@ -297,7 +294,7 @@ export default function Footer() {
         </div>
 
         {/* Column 4: Contact */}
-        <div className="footer-col" style={{ padding: "48px 40px" }}>
+        <div className="footer-col">
           <h4
             style={{
               fontFamily: "var(--font-ui)",

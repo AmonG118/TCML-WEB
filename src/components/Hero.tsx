@@ -2,10 +2,9 @@ import Link from "next/link";
 import SearchCard from "@/components/SearchCard";
 
 const STATS = [
-  { value: "60+",  label: "Centers",      color: "orange" },
-  { value: "8",    label: "Countries",    color: "teal"   },
-  { value: "4",    label: "Languages",    color: "orange" },
-  { value: "2021", label: "Founded",      color: "teal"  },
+  { value: "60+", label: "Centers",   color: "orange" },
+  { value: "8",   label: "Countries", color: "teal"   },
+  { value: "4",   label: "Languages", color: "orange" },
 ] as const;
 
 export default function Hero() {
@@ -17,9 +16,8 @@ export default function Hero() {
     >
       {/* ── Eyebrow bar ── */}
       <div
-        className="flex items-center border-b overflow-x-auto"
+        className="hero-eyebrow flex items-center border-b overflow-x-auto"
         style={{
-          padding: "0 48px",
           height: "40px",
           borderColor: "var(--rule)",
           fontFamily: "var(--font-ui)",
@@ -58,8 +56,14 @@ export default function Hero() {
         >
           ● Enrolling Now — Summer 2026
         </span>
-        <span className="shrink-0" style={{ color: "var(--ink-light)" }}>
+        <span
+          className="pr-5 mr-5 border-r shrink-0"
+          style={{ borderColor: "var(--rule)", color: "var(--ink-light)" }}
+        >
           60+ Centers Worldwide
+        </span>
+        <span className="shrink-0" style={{ color: "var(--ink-light)" }}>
+          Est. 2021
         </span>
       </div>
 
