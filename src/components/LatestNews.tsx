@@ -35,8 +35,8 @@ export default function LatestNews() {
       aria-labelledby="news-heading"
     >
       <div
+        className="px-5 py-10 md:[padding:72px_48px]"
         style={{
-          padding: "72px 48px",
           maxWidth: "1280px",
           margin: "0 auto",
         }}
@@ -91,22 +91,12 @@ export default function LatestNews() {
           </Link>
         </div>
 
-        {/* News grid: 3 columns */}
-        <div
-          className="md:grid-cols-1"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 0,
-          }}
-        >
+        {/* News grid: 3 columns desktop, 1 column mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-3">
           {NEWS_ITEMS.map((item, idx) => (
             <div
               key={idx}
-              className="cursor-pointer transition-all duration-200 relative overflow-hidden flex flex-col group md:border-r-0"
-              style={{
-                borderRight: idx < NEWS_ITEMS.length - 1 ? "1px solid var(--rule)" : "none",
-              }}
+              className={`cursor-pointer transition-all duration-200 relative overflow-hidden flex flex-col group [border-bottom:1px_solid_var(--rule)] last:[border-bottom:none] md:[border-bottom:none]${idx < NEWS_ITEMS.length - 1 ? " md:[border-right:1px_solid_var(--rule)]" : ""}`}
             >
               {/* Image area */}
               <div

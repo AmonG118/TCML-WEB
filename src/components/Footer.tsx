@@ -10,22 +10,14 @@ export default function Footer() {
       className="relative z-[1] border-t-2"
       style={{ borderColor: "var(--ink)", backgroundColor: "var(--paper)" }}
     >
-      {/* Footer Top - 4 columns */}
+      {/* Footer Top - 2 col mobile, 4 col desktop */}
       <div
-        className="md:grid-cols-1"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "2fr 1fr 1fr 1fr",
-          borderBottom: "1px solid var(--rule)",
-        }}
+        className="grid grid-cols-2 md:[grid-template-columns:2fr_1fr_1fr_1fr] border-b [border-color:var(--rule)]"
       >
         {/* Column 1: Brand + Tagline + Social */}
         <div
-          className="md:border-r-0"
-          style={{
-            padding: "48px 40px",
-            borderRight: "1px solid var(--rule)",
-          }}
+          className="[border-right:1px_solid_var(--rule)] [border-bottom:1px_solid_var(--rule)] md:[border-bottom:none]"
+          style={{ padding: "48px 40px" }}
         >
           <div
             style={{
@@ -113,11 +105,8 @@ export default function Footer() {
 
         {/* Column 2: Pages */}
         <div
-          className="md:border-r-0"
-          style={{
-            padding: "48px 40px",
-            borderRight: "1px solid var(--rule)",
-          }}
+          className="[border-bottom:1px_solid_var(--rule)] md:[border-bottom:none] md:[border-right:1px_solid_var(--rule)]"
+          style={{ padding: "48px 40px" }}
         >
           <h4
             style={{
@@ -224,11 +213,8 @@ export default function Footer() {
 
         {/* Column 3: Resources */}
         <div
-          className="md:border-r-0"
-          style={{
-            padding: "48px 40px",
-            borderRight: "1px solid var(--rule)",
-          }}
+          className="[border-right:1px_solid_var(--rule)]"
+          style={{ padding: "48px 40px" }}
         >
           <h4
             style={{
@@ -377,11 +363,8 @@ export default function Footer() {
 
       {/* Footer Bottom */}
       <div
+        className="flex flex-col gap-3 px-5 py-4 md:flex-row md:items-center md:justify-between md:px-10 md:py-5"
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "20px 40px",
           fontSize: "11px",
           color: "var(--ink-light)",
           fontFamily: "var(--font-ui)",

@@ -24,8 +24,8 @@ export default function OurMission() {
       aria-labelledby="mission-heading"
     >
       <div
+        className="px-5 py-10 md:[padding:72px_48px]"
         style={{
-          padding: "72px 48px",
           maxWidth: "1280px",
           margin: "0 auto",
         }}
@@ -63,23 +63,12 @@ export default function OurMission() {
           </h2>
         </div>
 
-        {/* Mission grid: 3 columns */}
-        <div
-          className="md:grid-cols-1"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 0,
-          }}
-        >
+        {/* Mission grid: 3 columns desktop, 1 column mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-3">
           {MISSION_ITEMS.map((item, idx) => (
             <div
               key={idx}
-              className="transition-colors duration-200 hover:bg-white/3 md:border-r-0"
-              style={{
-                padding: "40px 32px",
-                borderRight: idx < MISSION_ITEMS.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none",
-              }}
+              className={`transition-colors duration-200 hover:bg-white/5 px-5 py-8 md:[padding:40px_32px] [border-bottom:1px_solid_rgba(255,255,255,0.08)] last:[border-bottom:none] md:[border-bottom:none]${idx < MISSION_ITEMS.length - 1 ? " md:[border-right:1px_solid_rgba(255,255,255,0.08)]" : ""}`}
             >
               {/* Color bar */}
               <div

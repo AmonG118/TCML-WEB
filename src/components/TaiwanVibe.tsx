@@ -16,14 +16,10 @@ export default function TaiwanVibe() {
     >
 
       <div
-        className="md:grid-cols-1 md:gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 px-5 py-10 md:[padding:64px_48px] gap-8 md:gap-16"
         style={{
-          padding: "64px 48px",
           maxWidth: "1280px",
           margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "64px",
           alignItems: "center",
           position: "relative",
           zIndex: 1,
@@ -89,14 +85,7 @@ export default function TaiwanVibe() {
         </div>
 
         {/* Right: Feature grid 2x2 */}
-        <div
-          className="md:grid-cols-1"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "12px",
-          }}
-        >
+        <div className="grid grid-cols-2 gap-3">
           {VIBE_ITEMS.map((item) => (
             <div
               key={item.kanji}

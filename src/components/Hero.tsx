@@ -49,22 +49,11 @@ export default function Hero() {
         </span>
       </div>
 
-      {/* ── Hero main：1fr + 460px ── */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 460px",
-          minHeight: "540px",
-        }}
-        className="md:grid-cols-1"
-      >
+      {/* ── Hero main：1fr + 420px desktop, single col mobile ── */}
+      <div className="grid grid-cols-1 md:[grid-template-columns:1fr_420px] min-h-[540px]">
         {/* ── Left copy ── */}
         <div
-          className="relative flex flex-col justify-between overflow-hidden md:border-r-0 md:order-first"
-          style={{
-            padding: "56px 48px",
-            borderRight: "1px solid var(--rule)",
-          }}
+          className="relative flex flex-col justify-between overflow-hidden p-5 md:[padding:56px_48px] [border-bottom:1px_solid_var(--rule)] md:[border-bottom:none] md:[border-right:1px_solid_var(--rule)]"
         >
           {/* 裝飾性「學」字（純氛圍，aria-hidden）*/}
           <span
@@ -167,11 +156,11 @@ export default function Hero() {
             </p>
 
             {/* CTA buttons */}
-            <div className="flex items-center flex-wrap md:flex-col md:gap-3" style={{ gap: "12px" }}>
+            <div className="flex flex-col gap-3 md:flex-row md:items-center md:flex-wrap">
               {/* Primary: Find a Center */}
               <Link
                 href="/centers"
-                className="inline-flex items-center justify-center gap-2 font-semibold text-white transition-all duration-200 hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orange)] focus-visible:ring-offset-2 md:w-full"
+                className="inline-flex items-center justify-center gap-2 font-semibold text-white transition-all duration-200 hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orange)] focus-visible:ring-offset-2 w-full md:w-auto"
                 style={{
                   backgroundColor: "var(--orange)",
                   fontFamily: "var(--font-ui)",
@@ -189,7 +178,7 @@ export default function Hero() {
               {/* Teal: Enroll Now */}
               <Link
                 href="/enroll"
-                className="inline-flex items-center justify-center gap-2 font-semibold text-white transition-all duration-200 hover:-translate-y-px hover:bg-[var(--teal-dark)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal)] focus-visible:ring-offset-2 md:w-full"
+                className="inline-flex items-center justify-center gap-2 font-semibold text-white transition-all duration-200 hover:-translate-y-px hover:bg-[var(--teal-dark)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal)] focus-visible:ring-offset-2 w-full md:w-auto"
                 style={{
                   backgroundColor: "var(--teal)",
                   fontFamily: "var(--font-ui)",
@@ -207,7 +196,7 @@ export default function Hero() {
               {/* Outline: Learn More */}
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center gap-2 transition-all duration-200 hover:border-[var(--teal)] hover:text-[var(--teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal)] focus-visible:ring-offset-2 md:w-full"
+                className="inline-flex items-center justify-center gap-2 transition-all duration-200 hover:border-[var(--teal)] hover:text-[var(--teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal)] focus-visible:ring-offset-2 w-full md:w-auto"
                 style={{
                   backgroundColor: "transparent",
                   color: "var(--ink)",
@@ -284,7 +273,7 @@ export default function Hero() {
 
         {/* ── Right：photo area + search card ── */}
         <div
-          className="flex flex-col md:order-last"
+          className="flex flex-col"
           style={{ backgroundColor: "var(--paper-dark)" }}
         >
           {/* Photo area（漸層佔位圖 + 台灣裝飾）*/}
