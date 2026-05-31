@@ -20,12 +20,7 @@ export default function SearchCard() {
   }
 
   return (
-    <div
-      style={{
-        borderTop: "1px solid var(--rule)",
-        padding: "24px",
-      }}
-    >
+    <div className="search-card-wrap">
       {/* 標題（mockup 樣式：小寫粗體大寫，ink-light）*/}
       <p
         style={{

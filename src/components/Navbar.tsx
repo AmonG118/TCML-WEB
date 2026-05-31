@@ -35,10 +35,9 @@ export default function Navbar() {
       style={{ backgroundColor: "var(--paper)", borderColor: "var(--rule)" }}
     >
       <div
-        className="grid items-center gap-8"
+        className="navbar-inner grid items-center"
         style={{
           gridTemplateColumns: "auto 1fr auto",
-          padding: "0 48px",
           height: "64px",
         }}
       >

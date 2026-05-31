@@ -5,7 +5,7 @@ const STATS = [
   { value: "60+",  label: "Centers",      color: "orange" },
   { value: "8",    label: "Countries",    color: "teal"   },
   { value: "4",    label: "Languages",    color: "orange" },
-  { value: "2021", label: "Est. by OCAC", color: "teal"  },
+  { value: "2021", label: "Founded",      color: "teal"  },
 ] as const;
 
 export default function Hero() {
@@ -36,7 +36,21 @@ export default function Hero() {
           className="pr-5 mr-5 border-r shrink-0"
           style={{ borderColor: "var(--rule)", color: "var(--ink-light)" }}
         >
-          Official Program · OCAC Taiwan 🇹🇼
+          Official Program · OCAC Taiwan{" "}
+          <svg
+            aria-hidden="true"
+            role="presentation"
+            viewBox="0 0 30 20"
+            width="18"
+            height="12"
+            style={{ display: "inline-block", verticalAlign: "middle", borderRadius: "2px", flexShrink: 0 }}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="30" height="20" fill="#FE0000" />
+            <rect width="15" height="10" fill="#000095" />
+            <circle cx="7.5" cy="5" r="2.8" fill="white" />
+            <circle cx="7.5" cy="5" r="1.2" fill="#FE0000" />
+          </svg>
         </span>
         <span
           className="pr-5 mr-5 border-r shrink-0"
