@@ -80,6 +80,7 @@ export default function SearchCard() {
             fontFamily: "var(--font-ui)",
             fontSize: "13px",
             fontWeight: 600,
+            minHeight: "44px",
             cursor: "pointer",
             transition: "background 0.15s",
             whiteSpace: "nowrap",
