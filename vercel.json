@@ -2,16 +2,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "installCommand": "npm install",
-  "framework": "nextjs",
-  "env": {
-    "NEXT_PUBLIC_SITE_URL": "@site_url"
-  },
-  "envs": {
-    "preview": {
-      "NEXT_PUBLIC_SITE_URL": "@site_url"
-    },
-    "production": {
-      "NEXT_PUBLIC_SITE_URL": "https://www.tcml-mandarin.org"
-    }
-  }
+  "framework": "nextjs"
 }
