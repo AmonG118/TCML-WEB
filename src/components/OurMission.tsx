@@ -35,7 +35,7 @@ export default function OurMission() {
               fontWeight: 700,
               textTransform: "uppercase",
               letterSpacing: "2px",
-              color: "rgba(255,255,255,0.35)",
+              color: "rgba(255,255,255,0.65)",
               marginBottom: "8px",
               fontFamily: "var(--font-ui)",
             }}
@@ -99,7 +99,7 @@ export default function OurMission() {
                 style={{
                   fontFamily: "var(--font-ui)",
                   fontSize: "13px",
-                  color: "rgba(255,255,255,0.45)",
+                  color: "rgba(255,255,255,0.75)",
                   lineHeight: 1.75,
                 }}
               >

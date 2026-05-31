@@ -31,7 +31,7 @@ export default function SearchCard() {
           fontWeight: 700,
           textTransform: "uppercase",
           letterSpacing: "1px",
-          color: "var(--ink-light)",
+          color: "var(--ink-mid)",
           marginBottom: "14px",
           fontFamily: "var(--font-ui)",
         }}
@@ -55,7 +55,7 @@ export default function SearchCard() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="City, state, or country…"
-          className="focus:border-[var(--teal)] placeholder:text-[var(--ink-light)]"
+          className="placeholder:text-[var(--ink-light)]"
           style={{
             flex: 1,
             fontFamily: "var(--font-ui)",
@@ -65,7 +65,6 @@ export default function SearchCard() {
             borderRadius: "6px",
             backgroundColor: "var(--white)",
             color: "var(--ink)",
-            outline: "none",
             transition: "border-color 0.15s",
           }}
         />

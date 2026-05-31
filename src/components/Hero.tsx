@@ -96,7 +96,7 @@ export default function Hero() {
                 fontWeight: 700,
                 letterSpacing: "2px",
                 textTransform: "uppercase",
-                color: "var(--ink-light)",
+                color: "var(--ink-mid)",
                 fontFamily: "var(--font-ui)",
               }}
             >
@@ -172,9 +172,10 @@ export default function Hero() {
               {/* Primary: Find a Center */}
               <Link
                 href="/centers"
-                className="inline-flex items-center justify-center gap-2 font-semibold text-white transition-all duration-200 hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orange)] focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orange)] focus-visible:ring-offset-2"
                 style={{
                   backgroundColor: "var(--orange)",
+                  color: "var(--ink)",
                   fontFamily: "var(--font-ui)",
                   fontSize: "14px",
                   padding: "12px 22px",
@@ -190,15 +191,15 @@ export default function Hero() {
               {/* Teal: Enroll Now */}
               <Link
                 href="/enroll"
-                className="inline-flex items-center justify-center gap-2 font-semibold text-white transition-all duration-200 hover:-translate-y-px hover:bg-[var(--teal-dark)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal)] focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center gap-2 font-semibold text-white transition-all duration-200 hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal-dark)] focus-visible:ring-offset-2"
                 style={{
-                  backgroundColor: "var(--teal)",
+                  backgroundColor: "var(--teal-dark)",
                   fontFamily: "var(--font-ui)",
                   fontSize: "14px",
                   padding: "12px 22px",
                   borderRadius: "6px",
                   boxShadow:
-                    "0 2px 0 var(--teal-dark), 0 4px 12px rgba(13,148,136,0.2)",
+                    "0 2px 0 rgba(0,0,0,0.18), 0 4px 12px rgba(13,148,136,0.15)",
                   minHeight: "44px",
                 }}
               >
@@ -270,7 +271,7 @@ export default function Hero() {
                     fontFamily: "var(--font-ui)",
                     fontSize: "10px",
                     fontWeight: 600,
-                    color: "var(--ink-light)",
+                    color: "var(--ink-mid)",
                     textTransform: "uppercase",
                     letterSpacing: "0.5px",
                     marginTop: "4px",
@@ -329,9 +330,10 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Photo caption */}
+            {/* Photo caption — decorative, aria-hidden */}
             <p
               className="absolute"
+              aria-hidden="true"
               style={{
                 bottom: "12px",
                 left: "16px",

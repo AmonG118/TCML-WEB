@@ -11,7 +11,7 @@ export default function TaiwanVibe() {
   return (
     <section
       className="relative z-[1] overflow-hidden"
-      style={{ backgroundColor: "var(--teal)" }}
+      style={{ backgroundColor: "var(--teal-dark)" }}
       aria-labelledby="vibe-heading"
     >
 
@@ -31,7 +31,7 @@ export default function TaiwanVibe() {
               fontWeight: 700,
               textTransform: "uppercase",
               letterSpacing: "2px",
-              color: "rgba(255,255,255,0.5)",
+              color: "rgba(255,255,255,0.75)",
               marginBottom: "8px",
               fontFamily: "var(--font-ui)",
             }}
@@ -55,7 +55,7 @@ export default function TaiwanVibe() {
           <p
             style={{
               fontSize: "15px",
-              color: "rgba(255,255,255,0.65)",
+              color: "rgba(255,255,255,0.9)",
               lineHeight: 1.75,
               marginBottom: "28px",
               fontFamily: "var(--font-ui)",
@@ -69,7 +69,7 @@ export default function TaiwanVibe() {
             className="inline-flex items-center gap-2 font-semibold text-white transition-all duration-200 hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
             style={{
               backgroundColor: "white",
-              color: "var(--teal)",
+              color: "var(--teal-dark)",
               fontFamily: "var(--font-ui)",
               fontSize: "14px",
               padding: "12px 22px",
@@ -121,7 +121,7 @@ export default function TaiwanVibe() {
               <p
                 style={{
                   fontSize: "12px",
-                  color: "rgba(255,255,255,0.5)",
+                  color: "rgba(255,255,255,0.75)",
                   lineHeight: 1.5,
                   fontFamily: "var(--font-ui)",
                 }}

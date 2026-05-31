@@ -15,7 +15,7 @@ const FOOTER_H4_STYLE = {
   fontWeight: 700,
   textTransform: "uppercase" as const,
   letterSpacing: "2px",
-  color: "var(--ink-light)",
+  color: "var(--ink-mid)",
   marginBottom: "20px",
   paddingBottom: "12px",
   borderBottom: "1px solid var(--rule)",

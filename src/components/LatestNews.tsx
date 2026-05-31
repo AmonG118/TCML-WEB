@@ -47,7 +47,7 @@ export default function LatestNews() {
                 fontWeight: 700,
                 textTransform: "uppercase",
                 letterSpacing: "2px",
-                color: "var(--ink-light)",
+                color: "var(--ink-mid)",
                 marginBottom: "8px",
                 fontFamily: "var(--font-ui)",
               }}
@@ -75,8 +75,8 @@ export default function LatestNews() {
               fontFamily: "var(--font-ui)",
               fontSize: "13px",
               fontWeight: 600,
-              color: "var(--teal)",
-              borderColor: "var(--teal)",
+              color: "var(--teal-dark)",
+              borderColor: "var(--teal-dark)",
               textDecoration: "none",
               whiteSpace: "nowrap",
             }}
@@ -194,7 +194,7 @@ export default function LatestNews() {
                     fontFamily: "var(--font-ui)",
                     fontSize: "12px",
                     fontWeight: 600,
-                    color: idx === 1 ? "var(--teal)" : "var(--orange)",
+                    color: idx === 1 ? "var(--teal-dark)" : "var(--orange-dark)",
                     textDecoration: "none",
                     marginTop: "auto",
                   }}
