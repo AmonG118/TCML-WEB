@@ -12,11 +12,12 @@ export default function Footer() {
     >
       {/* Footer Top - 2 col mobile, 4 col desktop */}
       <div
-        className="grid grid-cols-2 md:[grid-template-columns:2fr_1fr_1fr_1fr] border-b [border-color:var(--rule)]"
+        className="footer-top-grid grid border-b"
+        style={{ borderColor: "var(--rule)" }}
       >
         {/* Column 1: Brand + Tagline + Social */}
         <div
-          className="[border-right:1px_solid_var(--rule)] [border-bottom:1px_solid_var(--rule)] md:[border-bottom:none]"
+          className="footer-col footer-col-brand"
           style={{ padding: "48px 40px" }}
         >
           <div
@@ -105,7 +106,7 @@ export default function Footer() {
 
         {/* Column 2: Pages */}
         <div
-          className="[border-bottom:1px_solid_var(--rule)] md:[border-bottom:none] md:[border-right:1px_solid_var(--rule)]"
+          className="footer-col footer-col-pages"
           style={{ padding: "48px 40px" }}
         >
           <h4
@@ -213,7 +214,7 @@ export default function Footer() {
 
         {/* Column 3: Resources */}
         <div
-          className="[border-right:1px_solid_var(--rule)]"
+          className="footer-col footer-col-resources"
           style={{ padding: "48px 40px" }}
         >
           <h4
@@ -296,7 +297,7 @@ export default function Footer() {
         </div>
 
         {/* Column 4: Contact */}
-        <div style={{ padding: "48px 40px" }}>
+        <div className="footer-col" style={{ padding: "48px 40px" }}>
           <h4
             style={{
               fontFamily: "var(--font-ui)",
@@ -394,22 +395,19 @@ export default function Footer() {
           >
             Accessibility
           </Link>
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "5px",
-              border: "1px solid var(--rule)",
-              borderRadius: "4px",
-              padding: "3px 8px",
-              fontSize: "10px",
-              fontWeight: 700,
-              letterSpacing: "0.5px",
-              color: "var(--ink-light)",
-            }}
+          <a
+            href="https://accessibility.moda.gov.tw/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="通過無障礙 AA 等級認證"
           >
-            ♿ WCAG AA
-          </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/wcag-badge.webp"
+              alt="無障礙 AA 標章"
+              style={{ width: "80px", height: "auto", display: "block" }}
+            />
+          </a>
         </div>
       </div>
     </footer>

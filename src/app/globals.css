@@ -233,7 +233,7 @@
    Hero explicit layout utilities
    ───────────────────────────────────────── */
 .hero-grid {
-  grid-template-columns: 1fr 420px;
+  grid-template-columns: 1fr 460px;
 }
 
 .hero-cta-wrap {
@@ -259,6 +259,32 @@
   .hero-cta-wrap > a {
     width: 100%;
   }
+}
+
+/* ─────────────────────────────────────────
+   Footer layout utilities
+   ───────────────────────────────────────── */
+.footer-top-grid {
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+
+.footer-col {
+  border-right: 1px solid var(--rule);
+}
+
+.footer-col:last-child {
+  border-right: none;
+}
+
+@media (max-width: 767px) {
+  .footer-top-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-col { border-right: none; border-bottom: none; }
+  .footer-col-brand  { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .footer-col-pages  { border-bottom: 1px solid var(--rule); }
+  .footer-col-resources { border-right: 1px solid var(--rule); }
 }
 
 /* ─────────────────────────────────────────
