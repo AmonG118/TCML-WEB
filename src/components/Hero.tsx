@@ -130,10 +130,13 @@ export default function Hero() {
               <mark
                 style={{
                   display: "inline",
-                  background: "var(--highlight)",
+                  background: "none",
                   color: "var(--ink)",
-                  padding: "2px 8px",
-                  borderRadius: "var(--radius-badge)",
+                  textDecorationLine: "underline",
+                  textDecorationStyle: "solid",
+                  textDecorationColor: "var(--orange)",
+                  textDecorationThickness: "3px",
+                  textUnderlineOffset: "8px",
                 }}
               >
                 Mandarin
